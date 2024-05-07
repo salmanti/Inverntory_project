@@ -1,0 +1,208 @@
+<div  class='dashboard-content'>
+    
+    <div  class='container'>
+    
+
+      <div *ngIf="createform">
+
+        <h2 style="text-align:center ;background-color:rgba(30, 143, 255, 0.537); padding:2px; color: black;"> Add Distributor </h2><br>
+
+      <form [formGroup]="addForm">
+      
+      <div class="row g-3">
+      <div class="col">
+      
+      <div class="mb-3 row">
+        <label for="inputPassword" class="col-sm-3 col-form-label"  > Name</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control form-control-sm" formControlName="name">
+        </div>
+      </div>
+    
+      </div>
+       <div class="col">
+         <div class="mb-3 row">
+          <label for="inputPassword" class="col-sm-3 col-form-label"  >Distributor Code</label>
+           <div class="col-sm-9">
+          <input type="text" class="form-control form-control-sm" formControlName="code">
+        </div>
+      </div>
+      </div>
+    </div>
+    
+     
+    
+    <div class="row g-3">
+      <div class="col">
+      
+      <div class="mb-3 row">
+        <label for="inputPassword" class="col-sm-3 col-form-label"  >Phone</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control form-control-sm" formControlName="mobile">
+        </div>
+      </div>  
+      </div>
+      <div class="col">
+      
+        <div class="mb-3 row">
+          <label for="inputPassword" class="col-sm-3 col-form-label"  >Address</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control form-control-sm" formControlName="address">
+          </div>
+        </div>
+      
+        </div>
+    </div>
+
+
+    
+    <div class="row g-3">
+      <div class="col">
+
+        <div class="mb-3 row">
+            <label for="inputPassword" class="col-sm-3 col-form-label"  >Zone</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control form-control-sm" formControlName="zone">
+            </div>
+          </div>
+      
+      </div>
+      <div class="col">
+      
+        <div class="mb-3 row">
+          <label for="inputPassword" class="col-sm-3 col-form-label"  >Email</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control form-control-sm" formControlName="email">
+          </div>
+        </div>
+      
+        </div>
+    </div>
+
+
+    <div class="row g-3">
+      <div class="col">
+      
+      <div class="mb-3 row">
+        <label for="inputPassword" class="col-sm-3 col-form-label"  >User Name</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control form-control-sm" formControlName="username">
+        </div>
+      </div>  
+      </div>
+      <div class="col">
+      
+        <div class="mb-3 row">
+          <label for="inputPassword" class="col-sm-3 col-form-label"  >Photo</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control form-control-sm" formControlName="photo">
+          </div>
+        </div>
+      
+        </div>
+    </div>
+
+    <div class="row g-3">
+      <div class="col">
+      
+        <div class="mb-3 row">
+          <label for="inputPassword" class="col-sm-3 col-form-label"  >Password</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control form-control-sm" formControlName="password2">
+          </div>
+        </div>  
+        </div>
+      
+       <div class="col">
+         <div class="mb-3 row">
+          <label for="inputPassword" class="col-sm-3 col-form-label"  ></label>
+           <div class="col-sm-9">
+            <input type="hidden" formControlName="usertype" value="{{usertype}}">
+           <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <!-- <a href="/admin/supplier/create/"> <button class="btn btn-primary me-md-2" type="button">Refress</button></a> -->
+      <button class="btn btn-success"  (click)="addDistributor()" *ngIf="btnvisibility"   (click)=" hide()">Save</button>  
+    <button class="btn btn-primary"  (click)="updateDistributor()" *ngIf="!btnvisibility">Update</button>  
+    </div>
+    
+        </div>
+      </div>
+      </div>
+    </div>
+
+    </form>
+</div>
+    
+    </div>
+
+<br><br>
+
+     <div Class="container">
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+   
+      <button class="btn btn-primary "  (click)="show()"><i class="fa-solid fa-user-plus "></i> Add</button>
+    </div>
+      <div class="col-md-12">  
+        <h3 style="text-align:center ;background-color:rgb(100, 160, 220); padding:2px;">Distributor List</h3><br> 
+        <div class="table-responsive">  
+          <table class="table  table-sm">  
+            <thead>  
+              <tr>  
+                <th>Id</th>  
+                <th>Supplier Name</th>  
+                <th>Distributor code</th>  
+                <th>Phone</th>   
+                <th>email</th>
+                <th>Photo</th>
+                <th>User Name</th>
+               
+                <th>Password</th>
+                <th>Zone</th>
+              
+                <th>Address</th>
+
+                <th>Action</th>  
+                <th>Action</th>  
+              </tr>  
+            </thead>  
+            <tbody> 
+              <tr *ngFor="let p of products" >
+              <td>{{p.id}}</td>
+              <td>{{p.name}}</td>
+              <td>{{p.code}}</td>
+              <td>{{p.mobile}}</td>
+              <td>{{p.email}}</td>
+              <td>{{p.photo}}</td>
+              <td>{{p.username}}</td>
+             
+              <td>{{p.password2}}</td>
+              <td>{{p.zone}}</td>
+              <td>{{p.address}}</td>
+             
+              
+             <td> <button class="btn btn-info" (click)="editEmp(p)"  (click)="show()">Edit</button></td> 
+              <td> <button class="btn btn-danger" (click)="alertConfigaration(p)">Delete</button></td> 
+      
+             </tr>
+            </tbody>  
+          </table>  
+        </div>  
+      </div>  
+      </div> 
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+

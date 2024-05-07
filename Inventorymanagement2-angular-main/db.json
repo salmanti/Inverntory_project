@@ -1,0 +1,130 @@
+{
+  "suppplier": [
+    {
+      "id": 1,
+      "supplier_name": "Nazmul Hassan",
+      "supplier_zip": "1000",
+      "supplier_phone": "01922921065",
+      "supplier_email": "topunazmulhassan@gmail.com",
+      "supplier_address": "Kakrail,Dhaka",
+      "supplier_bankaccount": "57857"
+    },
+    {
+      "id": 2,
+      "supplier_name": "Nazmul Hassan",
+      "supplier_zip": "1000",
+      "supplier_phone": "01922921065",
+      "supplier_email": "topunazmulhassan@gmail.com",
+      "supplier_address": "Kakrail,Dhaka",
+      "supplier_bankaccount": "xcsxcxz"
+    }
+  ],
+  "stockinvoice": [
+    {
+      "id": 1000027,
+      "batch_id": "One",
+      "product_name": "Computer",
+      "product_unite": "piece",
+      "price": "50000",
+      "quantity": "3",
+      "total": "150000"
+    },
+    {
+      "id": 1000028,
+      "batch_id": "Two",
+      "product_name": "Laptop",
+      "product_unite": "piece",
+      "price": "60000",
+      "quantity": "2",
+      "total": "120000"
+    },
+    {
+      "id": 1000029,
+      "batch_id": "Dexktop",
+      "product_name": "Computer",
+      "product_unite": "piece",
+      "price": "70000",
+      "quantity": "3",
+      "total": "210000"
+    }
+  ],
+  "product": [
+    {
+      "id": 1,
+      "product_code": "One",
+      "product_name": "Computer",
+      "product_unit": "piece",
+      "product_brand": "piece",
+      "product_quantity": 50000,
+      "wirehouse_rate": 3,
+      "retail_rate": 150000,
+      "distributor_rate": 150000,
+      "mrp": 150000
+    },
+    {
+      "id": 2,
+      "product_code": "One",
+      "product_name": "Laptop",
+      "product_unit": "piece",
+      "product_brand": "piece",
+      "product_quantity": 50000,
+      "wirehouse_rate": 3,
+      "retail_rate": 150000,
+      "distributor_rate": 150000,
+      "mrp": 150000
+    },
+    {
+      "id": 3,
+      "product_code": "One",
+      "product_name": "Computer",
+      "product_unit": "piece",
+      "product_brand": "piece",
+      "product_quantity": 50000,
+      "wirehouse_rate": 3,
+      "retail_rate": 150000,
+      "distributor_rate": 150000,
+      "mrp": 150000
+    }
+  ],
+  "warehouse": [
+    {
+      "id": 2,
+      "code": "retrt",
+      "name": "Nazmul Hassan",
+      "mobile": "01922921065",
+      "address": "Kakrail,Dhaka"
+    },
+    {
+      "id": 3,
+      "code": "oijoijoi",
+      "name": "Nazmul Hassan",
+      "mobile": "01922921065",
+      "address": "Kakrail,Dhaka"
+    },
+    {
+      "id": 4,
+      "code": "huihui",
+      "name": "Nazmul Hassan",
+      "mobile": "01922921065",
+      "address": "Kakrail,Dhaka"
+    }
+  ],
+  "distributor": [
+    {
+      "id": 2,
+      "code": "ytrf",
+      "name": "Nazmul Hassan",
+      "mobile": "01922921065",
+      "address": "Kakrail,Dhaka",
+      "zone": "z1"
+    },
+    {
+      "id": 3,
+      "code": "sdfds",
+      "name": "Nazmul Hassan",
+      "mobile": "01922921065",
+      "address": "Kakrail,Dhaka",
+      "zone": "fredf"
+    }
+  ]
+}

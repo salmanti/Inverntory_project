@@ -1,0 +1,46 @@
+ 
+    <div  class='container'>
+        <br>
+       
+     <h3 style="text-align:center ;background-color:DodgerBlue; padding:2px;">Main Stock</h3><br>
+     </div>
+
+     <div  class='container'>
+        <br>
+       
+     
+     <table class="table table-striped table-hover">
+     <thead   class="table-info">
+       <tr>
+         
+         <th scope="col">Serial</th>
+         <th scope="col">Product Name</th>
+        
+        
+         <th scope="col">Brand</th>
+       
+           <th scope="col">Total Stock</th>
+           <th scope="col">Available Stock</th>
+          
+   
+       </tr>
+     </thead>
+     
+     <tbody>
+            
+       <tr *ngFor="let p of products">
+        <td> {{p.product_id}} </td>
+         <td>{{p.product_name}}  </td>
+         <td>{{p.product_brand}}</td>
+         <td>{{p.total_quantity}} </td> 
+          <td id="qun" style="background-color:rgba(238, 32, 32, 0.218);color:rgb(24, 23, 23); text-align: center;">{{p.product_quantity}} </td>
+          
+       </tr>
+     
+       
+        
+                  
+     </tbody>
+   </table>
+     
+     </div>

@@ -1,0 +1,287 @@
+
+
+        <div style="background-color: white;">
+            <div  class='container' >
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              
+              <a routerLink="/ad-home/product-list"><button class="btn btn-primary" type="button">  <i class="fa-solid fa-list me-2"></i> </button></a>
+            </div> 
+            
+            <div class="container " >
+            <br>
+              <div class="row">
+              
+                <!-- First Grid start --> 
+                <div class="col">
+                
+               
+              <h3 style=" text-align:center;">ADD PRODUCT</h3>
+           
+                  
+               <br> 
+               <div class="container " >
+              <form  [formGroup]="form" (ngSubmit)="submit()" >
+              
+              <div class="row g-3">
+              <div class="col">
+              <div class="mb-3 row">
+                <label for="inputPassword" class="col-sm-3 col-form-label"  > Product Name</label>
+                <div class="col-sm-9">
+                   <input  formControlName="product_name" type="text" id="product_name" class="form-control form-control-sm" >
+                </div>
+              </div>
+              </div>
+              </div>
+              
+              
+               <div class="row g-3">
+              <div class="col">
+              <div class="mb-3 row">
+                <label for="inputPassword" class="col-sm-3 col-form-label"  >Code</label>
+                <div class="col-sm-9">
+                   <input formControlName="product_code" type="text" class="form-control form-control-sm"  >
+                </div>
+              </div>
+              </div>
+              </div>
+              
+                  <div class="row g-3">
+              <div class="col">
+              <div class="mb-3 row">
+                <label for="inputPassword" class="col-sm-3 col-form-label"  >Unit</label>
+                <div class="col-sm-9">
+                   <input formControlName="product_unit" type="text" class="form-control form-control-sm" placeholder="Piece"  value="Piece">
+                </div>
+              </div>
+              </div>
+              </div>
+              
+               <div class="row g-3">
+              <div class="col">
+                <div class="mb-3 row">
+                  <label for="inputPassword" class="col-sm-3 col-form-label"  >Brand</label>
+                  <div class="col-sm-9">
+                    <select formControlName="product_brand" class="form-select"  >
+                      <option   >Select</option>
+                        <option  *ngFor="let p of brandlist" >{{p.name}}</option>
+                      
+                      </select>
+                  </div>
+                </div>
+              </div>
+              </div>
+
+
+              <div class="row g-3">
+                <div class="col">
+                  <div class="mb-3 row">
+                    <label for="inputPassword" class="col-sm-3 col-form-label"  >Categories</label>
+                    <div class="col-sm-9">
+                       <select formControlName="product_category" class="form-select"  >
+                        <option   >Select</option>
+                          <option  *ngFor="let p of categorylist" >{{p.name}}</option>
+                        
+                        </select> 
+                    </div>
+                  </div>
+                </div>
+                </div>
+              
+            
+              <div class="row g-3">
+                <div class="col">
+                <div class="mb-3 row">
+                  <label  for="inputPassword" class="col-sm-3 col-form-label"  >Purchase Rate</label>
+                  <div class="col-sm-9">
+                     <input formControlName="purchase_rate" type="text" class="form-control form-control-sm"  value="0">
+                  </div>
+                </div>
+                </div>
+                </div>
+
+              
+                 <div class="row g-3">
+              <div class="col">
+              <div class="mb-3 row">
+                <label  for="inputPassword" class="col-sm-3 col-form-label"  >Warehouse Rate</label>
+                <div class="col-sm-9">
+                   <input formControlName="wirehouse_rate" type="text" class="form-control form-control-sm"  value="0">
+                </div>
+              </div>
+              </div>
+              </div>
+               <div class="row g-3">
+              <div class="col">
+              <div class="mb-3 row">
+                <label for="inputPassword" class="col-sm-3 col-form-label"  >Distributor Rate</label>
+                <div class="col-sm-9">
+                   <input formControlName="distributor_rate" type="text" class="form-control form-control-sm"   value="0">
+                </div>
+              </div>
+              </div>
+              </div>
+              
+                <div class="row g-3">
+              <div class="col">
+              <div class="mb-3 row">
+                <label for="inputPassword" class="col-sm-3 col-form-label"  >Retail Rate</label>
+                <div class="col-sm-9">
+                   <input formControlName="retail_rate" type="text" class="form-control form-control-sm"   value="0">
+                </div>
+              </div>
+              </div>
+              </div>
+              
+                <div class="row g-3">
+              <div class="col">
+              <div class="mb-3 row">
+                <label for="inputPassword" class="col-sm-3 col-form-label"  >MRP</label>
+                <div class="col-sm-9">
+                   <input formControlName="mrp" type="text" class="form-control form-control-sm"  value="0">
+                </div>
+              </div>
+              </div>
+              </div>
+             
+                <div class="row g-3">
+              <div class="col">
+              <div class="mb-3 row">
+                <label for="inputPassword" class="col-sm-3 col-form-label"  >Current Quantity</label>
+                <div class="col-sm-9">
+                   <input formControlName="product_quantity" type="text" class="form-control form-control-sm"   value="0" >
+                </div>
+              </div>
+              </div>
+              </div>  
+              <div class="row g-3">
+                <div class="col">
+                <div class="mb-3 row">
+                  <label for="inputPassword" class="col-sm-3 col-form-label"  >Total Quantity</label>
+                  <div class="col-sm-9">
+                     <input formControlName="total_quantity" type="text" class="form-control form-control-sm"   value="0" >
+                  </div>
+                </div>
+                </div>
+                </div> 
+               
+             
+             
+               
+             
+             
+              <button type="submit" class="btn btn-primary">Submit</button> 
+            </form>
+            <br><br>
+            
+               </div>   
+                  
+             
+                  
+                  
+                </div>
+                <!-- First Grid end -->  
+                
+                <!-- 2 nd grid start -->
+                <!-- <div class="col">
+                <h4 style="text-align:center;">Additional Units</h4>
+                <div class="row g-3">
+                <span><b>Main Stock</b></span>
+              <div class="col-sm-4">
+              <p style="background-color: red;">Red Alert</p>
+                <input type="text" class="form-control" >
+              </div>
+              <div class="col-sm-4">
+                 <p style="background-color: yellow;">Yellow Alert</p>
+                <input type="text" class="form-control" >
+              </div>
+              <div class="col-sm-4">
+              <p style="background-color: lightgreen;">Green Alert</p>
+                <input type="text" class="form-control" >
+              </div>
+            </div><br>
+            
+            <div class="row g-3">
+                <span><b>Warehouse Stock</b></span>
+              <div class="col-sm-4">
+              <p style="background-color: red;">Red Alert</p>
+                <input type="text" class="form-control">
+              </div>
+              <div class="col-sm-4">
+                 <p style="background-color: yellow;">Yellow Alert</p>
+                <input type="text" class="form-control" >
+              </div>
+              <div class="col-sm-4">
+              <p style="background-color: lightgreen;">Green Alert</p>
+                <input type="text" class="form-control" >
+              </div>
+            </div><br>
+            
+            <div class="row g-3">
+                <span><b>Distributor Stock</b></span>
+              <div class="col-sm-4">
+              <p style="background-color: red;">Red Alert</p>
+                <input type="text" class="form-control" >
+              </div>
+              <div class="col-sm-4">
+                 <p style="background-color: yellow;">Yellow Alert</p>
+                <input type="text" class="form-control" >
+              </div>
+              <div class="col-sm-4">
+              <p style="background-color: lightgreen;">Green Alert</p>
+                <input type="text" class="form-control" >
+              </div>
+            </div><br>
+            <div class="d-grid gap-2">
+              <button class="btn btn-primary" type="button">Save</button>
+              
+            </div>
+                      
+              </div> -->
+            </div>
+            
+            
+            
+            </div>
+            </div>
+
+
+            <!-- list start-->
+<!-- 
+            <div Class="container">
+
+              <div class="col-md-12">  
+                <h2> Product Table</h2>  
+                <div class="table-responsive">  
+                  <table class="table">  
+                    <thead>  
+                      <tr>  
+                        <th>Id</th>  
+                        <th>Product Code</th>  
+                        <th>Name</th>  
+                        <th>Quantity</th>  
+                        <th>Price</th>  
+                        <th>Action</th>  
+                        <th>Action</th>  
+                      </tr>  
+                    </thead>  
+                    <tbody> 
+                     <tr *ngFor="let p of products" >
+                      <td>{{p.id}}</td>
+                      <td>{{p.product_code}}</td>
+                      <td>{{p.product_name}}</td>
+                      <td>{{p.product_quantity}}</td>
+                      <td>{{p.product_price}}</td>
+                      <td> <button class="btn btn-info" (click)="editEmp(p)">Edit</button></td>
+                      <td> <button class="btn btn-danger" (click)="delProduct(p)">Delete</button></td>
+              
+                     </tr>
+                    </tbody>  
+                  </table>  
+                </div>  
+              </div>  
+              </div> -->
+            <!--List end-->
+            
+            </div>
+            
+

@@ -1,0 +1,119 @@
+<div  class='container'>
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              
+    <a  routerLink="/ad-home/stockin-invoice"><button class="btn btn-primary" type="button">  <i class="fa-solid fa-list me-2"></i> </button></a>
+  </div>
+   
+ <h3 style="text-align:center ;background-color:DodgerBlue; padding:2px; color: black;">Stock In</h3><br>
+
+ <!-- dropdown-->
+<form  [formGroup]="addForm">
+
+ <div class="row g-3">
+   
+    <div class="col-sm-2">
+      <p style="background-color: rgb(220, 236, 251);text-align: center; color: black;"> Brand</p>
+      <select  class="form-select"    (change)="productsfrombrand($event)"   formControlName="brand_name">
+        <option >-Select -</option>
+        <option *ngFor="let b of brnads "  [value]="b.name"> {{b.name}} </option>
+       
+      </select>
+
+    </div>
+    <div class="col-sm-2">
+      <!-- <button (click)="abcd()" > ABC </button> -->
+      <p style="background-color: rgb(220, 236, 251);text-align: center; color: black;">Product</p>
+      <select  class="form-select"    (change)="abcd($event)"  formControlName="product_id"  >
+        <option >-Select -</option>
+        <option *ngFor="let post of productslist3"   [value]="post.product_id"   > {{ post.product_name }}</option>
+      </select>
+
+    </div>
+    <div class="col-sm-1">
+      <input hidden type="text" class="form-control"   formControlName="status" value="0">
+    
+    </div>
+    <div class="col-sm-2">
+      <p style="background-color: rgb(220, 236, 251);text-align: center; color: black;">Supplier</p>
+          
+     <select  class="form-select" (change)="supplierevent($event)"    >
+      <option> -Select -</option>
+      <option *ngFor="let s of supplist"  [value]="s.supplier_name"> {{s.supplier_name}}   [{{s.id}}]</option>
+     
+    </select>
+    <!-- <input type="text" class="form-control" value="{{sid}}" > -->
+    
+      </div>
+      <div class="col-sm-2">
+         
+            <!-- <input type="text" class="form-control" > -->
+          </div>
+          <div class="col-sm-2">
+             
+                <input type="date" class="form-control"   formControlName="date">
+                <p style="background-color: rgb(220, 236, 251);text-align: center; color: black; margin-top: 10px; margin-bottom: 0px;">Payment Method</p>
+                <select  class="form-select"  formControlName="payment_method" >
+                  <option> -Select -</option>
+                  <option > Cash </option>
+                  <option > Chack </option>
+                 
+                </select>
+
+              </div>
+  </div><br><br>
+<!--dropdown end-->
+ <div class="row g-3">
+   
+  <div class="col-sm-2">
+  <p style="background-color: rgb(220, 236, 251);text-align: center; color: black;">Product Name</p>
+    <input type="text" class="form-control"  value="{{pname}}"  formControlName="product_name"  >
+    <!-- <div>{{abc}}</div> -->
+   
+  </div>
+  <!-- <input hidden value="{{productid}}" formControlName="product_id" > -->
+  <input hidden type="number" value="0" >
+  
+  <div class="col-sm-1">
+     <p style="background-color: rgb(220, 236, 251);text-align: center; color: black;">Brand</p>
+    <input type="text" class="form-control"  value="{{abc3}}" >
+  </div>
+  <div class="col-sm-2">
+    <p style="background-color: rgb(220, 236, 251);text-align: center; color: black;">Availabe Stock</p>
+   <input type="text" class="form-control"  value="{{totalstcok}}" >
+ </div>
+ 
+  <div class="col-sm-1">
+  <p style="background-color: rgb(220, 236, 251);text-align: center; color: black;">Unit</p>
+    <input type="text" class="form-control" value="{{punit}}"    formControlName="product_unit">
+  </div>
+  <div class="col-sm-2">
+    <p style="background-color: rgb(220, 236, 251);text-align: center; color: black;">Price</p>
+      <input type="number" class="form-control" value="{{purchaeprice}}"   formControlName="product_price" >
+    </div>
+    
+    <div class="col-sm-2">
+        <p style="background-color: rgb(220, 236, 251);text-align: center; color: black;" >Quantity</p>
+          <input type="number" class="form-control" name="quantity" id="quantity" [(ngModel)]="quantity" (click)="calculateResult()" (change)="calculateResult()"  formControlName="product_quantity" >
+          <!-- <label style="text-align:justify;">Sub Total :</label> -->
+          <!-- <label>Discount :</label><br>
+          <label>Total :</label> -->
+          <br>
+        </div>
+        <div class="col-sm-2">
+            <p style="background-color: rgb(220, 236, 251);text-align: center; color: black;">Total</p>
+              <input type="number" class="form-control" value="{{total}}"  formControlName="amount">
+              <!-- <input type="text" class="form-control" >
+              <input type="text" class="form-control" > -->
+            </div>
+</div>
+<br>
+
+<div class="d-grid gap-2">
+    
+    <button routerLink="/ad-home/stockin-invoice" class="btn btn-primary" type="button" (click)="add()"  >Save</button>
+   
+<!-- // routerLink="/ad-home/stockin-invoice" -->
+
+  </div>
+</form>
+</div><br>

@@ -1,0 +1,104 @@
+<div class="container"   >
+    <div class="container">
+      <div class="row g-3">
+        <div class="col-md-6"> <br> <br> 
+          <div class="row">
+            
+              <h6 style="color: black;">Company Name  :  <strong> NN Company Ltd</strong></h6>
+              <h6 style="color: black;">Distributor   : <strong> {{disname}} </strong></h6>
+              <h6 style="color: black;">Address       :<strong> {{disaddress}}</strong> </h6>
+              <h6 style="color: black;">Phoen         : <strong> {{disphone}} </strong></h6>
+            
+           
+          </div> <br>
+          <div class="row">
+            <h6 style="background-color:rgba(30, 143, 255, 0.537); padding:2px; color: black; padding: 10px;">BILL TO</h6>
+            <h6  style="color: black;">Customer Id :  <strong> {{billtoid}} </strong></h6>
+            <h6  style="color: black;">Customer Name:  <strong> {{billtoname}} </strong></h6>
+            <h6 style="color: black;">Address: <strong>{{billtoaddress}}</strong>  </h6>
+            <h6 style="color: black;">Phoen : <strong>{{billtomobile}}  </strong></h6>
+           
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h1 style="text-align: end;">INVOICE</h1> <br>
+          <div class="row">
+            <div class="col-md-6"  >
+            <h6 style="background-color:rgba(30, 143, 255, 0.537); padding:2px; color: black; padding: 10px;">Invoice Id</h6>
+            <h6 style=" color: black;"> <strong>00000  {{id}} </strong> </h6>
+            </div>
+          
+            <div class="col-md-6" >
+              <h6 style="background-color:rgba(30, 143, 255, 0.537); padding:2px; color: black; padding: 10px;">Date</h6>
+              <h6 style="color: black;" > <strong>{{date}}</strong> </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <br> 
+    <div class="container">
+    <div class="row g-3">
+      <div class="col-md-12">  
+       
+        <div class="table-responsive  ">  
+          <table class="table  table-sm ">  
+            <thead class="table-info">  
+              <tr>  
+                <th>Serial</th>
+                <th>Sale Id</th>
+                <th>Product Id</th>
+                <th>Product Name</th>  
+                <th>Brand Name</th>   
+                <th>Price</th> 
+                <th>Quantity</th> 
+                <th>Total</th> 
+        
+              </tr>  
+            </thead>  
+             <tbody> 
+               <tr *ngFor="let p of saledetailslist;let i=index">
+                 <td>{{i+1}}</td>
+                <td>{{p.sale_id}}</td>
+               <td>{{p.product_id}}</td> 
+               <td>{{p.product_name}}</td>
+              <td>{{p.product_brand}}</td>
+              
+             <td>{{p.retail_rate}}</td>
+             <td>{{p.quantity}}</td>
+             <td> <strong>{{p.total}}  </strong></td> 
+             
+              <!--<td>{{purchasedata.product_unit}}</td>
+              <td>{{purchasedata.product_price}}</td>
+              <td>{{purchasedata.product_quantity}}</td>
+              <td>{{purchasedata.supplier_name}}</td>
+              <td>{{purchasedata.payment_method}}</td>
+               <td>{{purchasedata.amount}}</td>
+               
+             <td> <button class="btn btn-primary"  >Details</button></td>  -->
+             </tr> 
+             <tr>
+              <td colspan="6" ></td>
+              <td>TOTAL :</td>
+              <td> <strong>{{grandTotalsss}}</strong></td>
+             </tr>
+            </tbody>   
+          </table>  
+        </div>  
+      </div>
+    </div>
+  </div><br> 
+                  
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end" style="margin-right: 50px; padding: 5px;"> 
+       
+        <div class="ng-container" *ngIf="approveview">
+          <button (click)="approved2()"> distributor product add</button>
+          <button  style="margin-left: 20px; padding-left: 50px; padding-right: 50px; background-color:red;"  (click)="cancelled ()"> Cancelled</button>
+          <button  style="margin-left: 20px; margin-right: 50px;  padding-left: 50px; padding-right: 50px; background-color:rgba(0, 128, 85, 0.502);"  (click)="approved ()"  (click)="approved2()"> Approved</button>
+      </div>
+        <button class="btn btn-primary" type="button" (click)="print()"   > <i class="fa-solid fa-print"></i> Print </button>
+      </div>  
+      </div>
+  

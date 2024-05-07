@@ -1,0 +1,52 @@
+<div  class='container'>
+    <br>
+   
+ <h3 style="text-align:center ;background-color:DodgerBlue; padding:2px;">Distributor Stock</h3><br>
+ </div>
+
+ <div  class='container'>
+    <br>
+   
+ 
+ <table class="table table-striped table-hover">
+ <thead   class="table-info">
+   <tr>
+     
+     <th scope="col">Serial</th>
+     <th scope="col">Product id</th>
+     <th scope="col">Product Name</th>
+     <th scope="col">Product Brand</th>
+     <th scope="col">Product Category</th>
+    
+    
+     <th scope="col">Distributor Id</th>
+   <th> Price</th>               <!--Selling-->
+       <!-- <th scope="col">Total Stock</th> -->
+       <th scope="col">Available Stock</th>
+      
+
+   </tr>
+ </thead>
+ 
+ <tbody>
+        
+   <tr *ngFor="let p of disStockbyDid;  let i = index">
+    <td>{{i+1}}</td>
+    <td> {{p.product_id}} </td>
+    <td>{{p.product_name}}</td>
+    <td>{{p.product_brand}}</td>
+    <td>{{p.product_category}}</td>
+
+     <td>{{p.distributor_id}} </td> 
+      <td>{{p.retail_rate}}</td> 
+      <td id="qun" style="background-color:rgba(238, 32, 32, 0.218);color:rgb(24, 23, 23); text-align: center;">{{p.current_quantity}} </td>
+      
+   </tr>
+ 
+   
+    
+              
+ </tbody>
+</table>
+ 
+ </div>

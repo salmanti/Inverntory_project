@@ -1,0 +1,52 @@
+<div class="container">
+    <h2 style="text-align:center ;background-color:rgba(30, 143, 255, 0.537); padding:2px; color: black;"> Payment List </h2><br>
+    </div>
+    <div class="container">
+    
+        <div Class="container"   >
+    
+            <div class="col-md-12">  
+             
+              <div class="table-responsive">  
+                <table class="table ">  
+                  <thead>  
+                    <tr>  
+                        <th>Date</th> 
+                        <th>Purpase</th> 
+                      <th>Invoice Id</th>  
+                    
+                    
+                     
+                      <th>Supplier Name</th> 
+                      <th>Payment Metod</th> 
+                      <th>Total</th> 
+                    
+                      
+                      <!-- <th>Action</th>   -->
+                    </tr>  
+                  </thead>  
+                  <tbody> 
+                    <tr *ngFor="let p of recevinglist" >
+                        <td>{{p.date}}</td>
+                        <td>Purchase Products</td>
+                    <td>00000{{p.purchase_id}}</td>
+                  
+                   
+                    <td>{{p.supplier_name}}</td>
+                    <td>{{p.payment_method}}</td>
+                     <td><strong> {{p.amount}} </strong></td>
+                     
+                  <!--  <td> <button class="btn btn-info" (click)="editEmp(p)">Edit</button></td>  -->
+                    <!-- <td> <button class="btn btn-danger" (click)="delProduct(p)">Delete</button></td>  -->
+                    <td> 
+                      <!-- <button class="btn btn-primary btn-sm" (click)=" approved (p)" ><i class="fa-solid fa-check"></i> Approve</button>
+                    <button class="btn " (click)="delete(p)" ><i class="fa-solid fa-trash-can"></i></button> -->
+                  </td>  
+                  
+                   </tr>
+                  </tbody>  
+                </table>  
+              </div>  
+            </div>  
+            </div>
+    </div>

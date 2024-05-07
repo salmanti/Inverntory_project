@@ -1,0 +1,155 @@
+
+ <div class="d-grid gap-2 d-md-flex justify-content-md-end" style="margin-right: 50px; padding: 5px;">
+              
+  <button class="btn btn-primary" type="button"  (click)="hide()" >  <i class="fa-solid fa-list me-2"  ></i>List </button>
+</div> 
+
+<div class="container" style="background-color: white;">
+ 
+  <div class="container"   *ngIf="createform">
+  <div class="row">
+    <div class="col-md-6"> <br> <br> <br>
+      <div class="row">
+        
+          <h6 style="color: black;">Company Name  :  <strong> SR Company Ltd</strong></h6>
+          <h6 style="color: black;">Address: Narayonjong, Dhaka </h6>
+          <h6 style="color: black;">Phoen : 01909624004</h6>
+        
+       
+      </div> <br>
+      <div class="row">
+        <h6 style="background-color:rgba(30, 143, 255, 0.537); padding:2px; color: black; padding: 10px;">BILL TO</h6>
+        <h6  style="color: black;">Company Name:  <strong> {{suppname}} </strong></h6>
+        <h6 style="color: black;">Address: <strong>{{supaddress}}</strong>  </h6>
+        <h6 style="color: black;">Phoen : <strong> {{supphone}} </strong></h6>
+        <h6 >Email: <strong>{{supemail}}</strong></h6>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h1 style="text-align: end;">INVOICE</h1> <br>
+      <div class="row">
+        <div class="col-md-6"  >
+        <h6 style="background-color:rgba(30, 143, 255, 0.537); padding:2px; color: black; padding: 10px;">Invoice Id</h6>
+        <h6 style=" color: black;"> <strong>00000{{invoiceid}}   </strong> </h6>
+        </div>
+      
+        <div class="col-md-6" >
+          <h6 style="background-color:rgba(30, 143, 255, 0.537); padding:2px; color: black; padding: 10px;">Date</h6>
+          <h6 style="color: black;" > <strong>{{date}}</strong> </h6>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<br> 
+
+
+  <div class="col-md-12">  
+   
+    <div class="table-responsive  ">  
+      <table class="table  ">  
+        <thead class="table-info">  
+          <tr>  
+            <th>Serial</th>
+            <th>Product Name</th>  
+            <th>Brand Name</th>  
+            <th>Product Unit</th>  
+            <th>Price</th> 
+            <th>Quantity</th> 
+            <th>Total</th> 
+    
+          </tr>  
+        </thead>  
+         <tbody> 
+           <tr >
+            <td>001</td>
+            <td>{{pname}}</td>
+          <td>{{brname}}</td> 
+          <td>{{unit}}</td>
+          <td>{{price}}</td>
+         <td>{{quantity}}</td>
+         <td> <strong>{{total}}  </strong></td>
+         
+          <!--<td>{{purchasedata.product_unit}}</td>
+          <td>{{purchasedata.product_price}}</td>
+          <td>{{purchasedata.product_quantity}}</td>
+          <td>{{purchasedata.supplier_name}}</td>
+          <td>{{purchasedata.payment_method}}</td>
+           <td>{{purchasedata.amount}}</td>
+           
+         <td> <button class="btn btn-primary"  >Details</button></td>  -->
+         </tr> 
+        </tbody>   
+      </table>  
+    </div>  
+  </div><br> <br>
+              
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end" style="margin-right: 50px; padding: 5px;"> 
+    <button class="btn btn-primary" type="button" (click)="print()"   > <i class="fa-solid fa-print"></i> Print </button>
+  </div>  
+  </div>
+
+<br>
+
+ <div Class="container"  *ngIf="!createform" >
+  <h2 style="text-align:center;">INVOICE LIST</h2> <br>
+    <div class="col-md-12">  
+     
+      <div class="table-responsive">  
+        <table class="table ">  
+          <thead>  
+            <tr>  
+              <!-- <td>Serial</td> -->
+              <td>Date</td>
+              <th>Invoice Id</th>  
+              <th>Product Name</th>  
+              <th>Brand Name</th>  
+              <!-- <th>Product Unit</th>   -->
+              <th>Price</th> 
+              <th>Quantity</th> 
+              <th>Supplier Name</th> 
+              <th>Payment Metod</th> 
+              <th>Total</th> 
+              <th>Status</th> 
+              <th>Action</th>  
+               
+            </tr>  
+          </thead>  
+          <tbody> 
+            <tr *ngFor="let p of purchases ;let i = index" >
+              <!-- <td>{{i+1}}</td> -->
+              <td>{{p.date}}</td>
+            <td><strong>000{{p.purchase_id}} </strong></td>
+            <td>{{p.product_name}}</td>
+            <td>{{p.brand_name}}</td>
+           
+            <!-- <td>{{p.product_unit}}</td> -->
+            <td>{{p.product_price}}</td>
+            <td>{{p.product_quantity}}</td>
+            <td>{{p.supplier_name}}</td>
+            <td>{{p.payment_method}}</td>
+             <td><strong> {{p.amount}} </strong></td>
+             <td style=" background-color: rgba(240, 255, 255, 0.631);"><strong> {{p.status}}</strong></td>
+             
+          <!--  <td> <button class="btn btn-info" (click)="editEmp(p)">Edit</button></td>  -->
+            <!-- <td> <button class="btn btn-danger" (click)="delProduct(p)">Delete</button></td>  -->
+           <td> <button class="btn "  (click)="getById(p)" >Details</button>
+            <button class="btn " (click)="delete(p)" ><i class="fa-solid fa-trash-can"></i></button>
+          </td>  
+         
+           </tr>
+          </tbody>  
+        </table>  
+      </div>  
+    </div>
+   
+    
+    </div>
+
+  </div>
+
+
+
+

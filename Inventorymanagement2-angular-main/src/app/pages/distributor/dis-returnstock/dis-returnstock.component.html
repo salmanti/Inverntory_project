@@ -1,0 +1,209 @@
+<div  class='dashboard-content'>
+    <div class="container">
+        <h2 style="text-align:center ;background-color:rgba(30, 143, 255, 0.637); padding:2px; color: black;">Stock Return to Admin</h2><br>
+    
+
+
+
+
+
+        <form  >
+
+            <div class="row g-3">
+              <div class="col-sm-2">
+               
+              </div>
+              <div class="col-sm-3"></div>
+              <div class="col-sm-2">
+                
+              </div>
+              <div class="col-sm-2">
+               
+              </div>
+              <div class="col-sm-2"></div>
+            </div>
+           <div class="row g-3">
+            <div class="col-sm-2">
+                <p  style="background-color: rgb(220, 236, 251);text-align: center; color: black;">.</p>
+                <input  type="text" class="form-control"  value="{{nextValue}}"  placeholder="Purchase id"> 
+              </div>
+             
+              <div class="col-sm-2">
+                
+          
+              </div>
+              
+              <div class="col-sm-1">
+             
+              
+              </div>
+              <div class="col-sm-2">
+               
+              
+                </div>
+                <div class="col-sm-2">
+          <!--          
+                  <p style="background-color: rgb(220, 236, 251);text-align: center; color: black;">Warehouse</p>
+                    
+                  <select  class="form-select"    formControlName="supplier_name" >
+                   <option> -Select -</option>
+                   <option   *ngFor="let w of warehouselist3">{{w.name}}  </option>
+                  
+                 </select> -->
+                    </div>
+                    <div class="col-sm-2">
+                       
+                           <input type="date" class="form-control" placeholder="18/01/23"   [(ngModel)]="date"   name="date" > 
+                         
+          
+                        </div>
+            </div><br><br>
+          <!--dropdown end-->
+           <div class="row g-3">
+             
+            <div class="col-sm-2">
+                <p style="background-color: rgb(220, 236, 251);text-align: center; color: black;"> Brand</p>
+                <select  class="form-select"    (change)="productsfrombrand($event)"  >
+                  <option >-Select -</option>
+                  <option  *ngFor="let b of brnads"  [value]="b.name">{{b.name}} </option>
+                 
+                </select>
+          
+              </div>
+              <div class="col-sm-2">
+                <!-- <button (click)="abcd()" > ABC </button> -->
+                <p style="background-color: rgb(220, 236, 251);text-align: center; color: black;">Product</p>
+                <select  class="form-select"  (change)="productDatafromProduct($event)"   >
+                  <option >-Select -</option>
+                  <option  *ngFor="let p of productlist" [value]="p.product_id" > {{p.product_name}}</option>
+                </select>
+          
+              </div>
+           
+            <input hidden   >
+            
+            
+            <div class="col-sm-2">
+              <p style="background-color: rgb(220, 236, 251);text-align: center; color: black;">Availabe Stock</p>
+             <input type="text" class="form-control"  value="{{currentstock}}" >
+           </div>
+           
+            <!-- <div class="col-sm-1">
+            <p style="background-color: rgb(220, 236, 251);text-align: center; color: black;">Unit</p>
+              <input type="text" class="form-control" value="{{punit}}"     >
+            </div> -->
+            <div class="col-sm-2">
+              <p style="background-color: rgb(220, 236, 251);text-align: center; color: black;">Price</p>
+                <input type="number" class="form-control"  value="{{dis_rate}}"  >
+              </div>
+              
+              <div class="col-sm-1">
+                  <p style="background-color: rgb(220, 236, 251);text-align: center; color: black;" >Quantity</p>
+                     <input type="number" class="form-control"  id="quantity" [(ngModel)]="quantity"   name="quantity"  (click)="calculateResult()" (change)="calculateResult()" > 
+                    <!-- <label style="text-align:justify;">Sub Total :</label> -->
+                    <!-- <label>Discount :</label><br>
+                    <label>Total :</label> -->
+                    <br>
+                  </div>
+                  <div class="col-sm-2">
+                      <p style="background-color: rgb(220, 236, 251);text-align: center; color: black;">Total</p>
+                        <input type="number" class="form-control"  value="{{total}}"  >
+                        <!-- <input type="text" class="form-control" >
+                        <input type="text" class="form-control" > -->
+                      </div>
+          
+                      <div class="col-sm-1">
+                        <p style="background-color: rgb(220, 236, 251);text-align: center; color: black;">Add</p>
+                          <!-- <input type="number" class="form-control" value="{{total}}"  formControlName="amount" > -->
+                          <button  (click)="AddtoCard()" >Add</button>
+                          <!-- <input type="text" class="form-control" >
+                          <input type="text" class="form-control" > -->
+                        </div>
+          </div>
+          <br> <br><br>
+          
+          <!-- <div class="d-grid gap-2">
+          
+            <tr *ngFor="let a of productList">
+              <td>{{a.product_name}}</td>
+          
+              <td>{{a.product_unit}}</td>
+          
+              <td>{{a.product_name}}</td>
+              <td>{{a.product_name}}</td>
+          
+            </tr>
+          
+          </div> -->
+          <div class="table-responsive ">  
+            <table class="table table-sm  table-bordered border-primary"   style=" border: 1px solid black ;border-spacing: 5px;"  >  
+              <thead>  
+                <tr style="padding:5px">  
+                  <th>Serial</th>
+                  <th>Product Id</th> 
+                  <th> Name</th>  
+                  <th>Brand Name</th>  
+                   
+                  <th>Price</th> 
+                  <th>Quantity</th> 
+                  <th>Total</th>    
+                       
+                  <th>Return Id</th>
+                  <th>Action</th>
+                   
+                 
+          
+                
+          
+                </tr>  
+              </thead>  
+               <tbody> 
+                <tr *ngFor="let p of saledetailsList; let i = index "  >
+                  <td>{{i+1}}</td>
+                   <td>{{p.product_id}}</td>
+                <td>{{p.product_name}}</td>
+                <td>{{p.product_brand}}</td>
+                <td>{{p.retail_rate}}</td>
+                <td>{{p.quantity}}</td>
+                <td> {{p.total}}</td>
+               
+              
+                
+                <td>{{p.sale_id}}</td>
+                 <td><button class="btn btn-primary btn-sm"  (click)="removeItem(i)"  > <i class="fas fa-trash-alt"></i></button></td> 
+               
+               
+                
+          
+                
+
+                <!-- <td> <button class="btn btn-danger" (click)="delete(p)">Delete</button></td>    -->
+          
+               </tr>
+               
+              </tbody>   
+            </table>  
+          </div>  
+          <div class="d-grid gap-2">
+            <div class="row g-3">
+              <div class="col-sm-9"></div>
+              <div class="col-sm-1">Total: </div>
+              <div class="col-sm-2">
+                <input type="number"   class="form-control"  value="{{grandTotalsss}}">
+              </div>
+            </div>
+              
+              <button   class="btn btn-primary" type="button"   (click)="addsalesdata()" >Save</button>     <!-- [routerLink]="['/ad-home/',{salesid},'saleinvoice']"--> 
+             
+          <!-- // routerLink="/ad-home/stockin-invoice" -->
+          
+            </div>
+          </form>
+    
+    
+    
+    
+    
+
+</div>
+</div>    

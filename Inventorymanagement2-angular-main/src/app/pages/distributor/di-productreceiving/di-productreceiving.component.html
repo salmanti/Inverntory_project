@@ -1,0 +1,58 @@
+<div class="container">
+    <h2 style="text-align:center ;background-color:rgba(30, 143, 255, 0.537); padding:2px; color: black;"> Stock In Pending List </h2><br>
+    </div>
+    <div class="container">
+    
+        <div Class="container"   >
+    <p><strong>Note: </strong> Go to  <strong> Details</strong> for Approved</p>
+           
+<!--  list 2   -->
+            <div class="col-md-12">  
+             
+              <div class="table-responsive">  
+                <table class="table ">  
+                  <thead class="table-info">  
+                    <tr>  
+                      <th>Serial</th>
+                      <th>Date </th>
+                      <th>Sale Id</th>
+                    
+                      <th>Distributor Id </th>  
+                      <th>Status</th>
+                      <th>Payment Method</th>
+                      <th>Total</th> 
+                      <th>Status</th>
+                      <th>Action</th>
+              
+                    </tr>  
+                  </thead>  
+                  <tbody> 
+                    <tr *ngFor="let p of salesList;let i=index">
+                      <td>{{i+1}}</td>
+                      <td>{{p.date}}</td> 
+                     <td>{{p.sale_id}}</td>
+                    
+                    <td>{{p.distributor_id}}</td>
+                    <td>Pending</td>
+                    <td>Cash</td>
+          
+                  <td> <strong>{{p.grand_total}}  </strong></td> 
+                  <td>{{p.status}}</td>
+
+                  <td><a  [routerLink]="['/dis-home/', p.sale_id, 'saleinvoice']" class="btn btn-info btn-sm" style="margin-right: 10px;">Details</a>
+                    <!-- <button class="btn " (click)="delete(p.sale_id)"><i class="fa-solid fa-trash-can"></i></button>    -->
+                  </td>
+                  <!--  <td> <button class="btn btn-info" (click)="editEmp(p)">Edit</button></td>  -->
+                    <!-- <td> <button class="btn btn-danger" (click)="delProduct(p)">Delete</button></td>  -->
+                    <td> 
+                      <!-- <button class="btn btn-primary btn-sm" (click)=" approved (p)" ><i class="fa-solid fa-check"></i> Approve</button>
+                    <button class="btn " (click)="delete(p)" ><i class="fa-solid fa-trash-can"></i></button> -->
+                  </td>  
+                  
+                   </tr>
+                  </tbody>  
+                </table>  
+              </div>  
+            </div> 
+            </div>
+    </div>

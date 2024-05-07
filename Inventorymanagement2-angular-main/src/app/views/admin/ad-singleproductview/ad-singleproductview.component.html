@@ -1,0 +1,53 @@
+
+
+
+
+
+<div class="container"> <br>
+    <h2> Product Name :{{ product.product_name }}</h2> <br><br>
+
+    <table class="table table-striped table-bordered   border-info">
+        <thead>
+              <tr>
+        
+                <th>ID</th>
+                <th>Name</th>
+                <th>Unit</th>
+                <th>Brand</th>
+                <th>Categories</th>
+                <th>Total Stock</th>
+                <th>Current stock</th>
+                <th>Warehouse Rate</th>
+                <th>Distributor Rate</th>
+                <th>retailer Rate</th>
+                <th>Mrp Rate</th>
+                
+              </tr>
+        </thead>
+        <tbody>
+              <tr>
+                
+                <td>{{ product.product_id }}</td>
+                <td>{{ product.product_name }}</td>
+                <td>{{ product.product_unit}}</td>
+                <td>{{ product.product_brand }}</td>
+                <td>{{ product.product_category }}</td>
+                <td>{{product.total_quantity}}</td>
+                <td>{{ product.product_quantity }}</td>
+                <td>{{ product.wirehouse_rate }}</td>
+                <td>{{ product.distributor_rate }}</td>
+                <td>{{ product.retail_rate }}</td>
+                <td>{{ product.mrp }}</td>
+             
+                
+              </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+</div>

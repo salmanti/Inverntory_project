@@ -1,0 +1,58 @@
+<div class="container">
+<h2 style="text-align:center ;background-color:rgba(30, 143, 255, 0.537); padding:2px; color: black;"> Stock In Pendig </h2><br>
+</div>
+<div class="container">
+
+    <div Class="container"   >
+
+        <div class="col-md-12">  
+         
+          <div class="table-responsive">  
+            <table class="table ">  
+              <thead>  
+                <tr>  
+                  <td>Serial</td>
+                  <th>Id</th>  
+                  <th>Product Name</th>  
+                  <th>Product Id</th> 
+                  <th>Brand Name</th>  
+                  <th>Product Unit</th>  
+                  <th>Price</th> 
+                  <th>Quantity</th> 
+                  <th>Supplier Name</th> 
+                  <th>Payment Metod</th> 
+                  <th>Total</th> 
+                
+                  
+                  <th>Action</th>  
+                </tr>  
+              </thead>  
+              <tbody> 
+                <tr *ngFor="let p of pendingdata ;let i = index" >
+                  <td>{{i+1}}</td>
+                <td>{{p.purchase_id}}</td>
+                <td>{{p.product_name}}</td>
+                <td>{{p.product_id}}</td>
+                <td>{{p.brand_name}}</td>
+               
+                <td>{{p.product_unit}}</td>
+                <td>{{p.product_price}}</td>
+                <td>{{p.product_quantity}}</td>
+                <td>{{p.supplier_name}}</td>
+                <td>{{p.payment_method}}</td>
+                 <td><strong> {{p.amount}} </strong></td>
+                 
+              <!--  <td> <button class="btn btn-info" (click)="editEmp(p)">Edit</button></td>  -->
+                <!-- <td> <button class="btn btn-danger" (click)="delProduct(p)">Delete</button></td>  -->
+                <td> 
+                  <button class="btn btn-primary btn-sm" (click)=" approved (p)" (click)="upStatus(p)" ><i class="fa-solid fa-check"></i> Approve</button>
+                <button class="btn " (click)="delete(p)"  ><i class="fa-solid fa-trash-can"></i></button>
+              </td>  
+              
+               </tr>
+              </tbody>  
+            </table>  
+          </div>  
+        </div>  
+        </div>
+</div>

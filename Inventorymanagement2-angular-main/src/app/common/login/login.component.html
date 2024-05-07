@@ -1,0 +1,133 @@
+
+    <section class="background-radial-gradient overflow-hidden ">
+      
+  <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+    <!-- <button type="button" class="btn btn-secondary btn-lg" id="admin_button" title="admin login" *ngIf="adminbutton">Admin Login</button>
+<button type="button" class="btn btn-secondary btn-lg" id="staff_button" *ngIf="!warehousebutton">Staff Login</button>
+<button type="button" class="btn btn-secondary btn-lg" id="user_button" *ngIf="!distributorbutton">User Login</button> -->
+
+    <div class="row gx-lg-5 align-items-center mb-5">
+       
+      <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+        <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
+          The best offer <br />
+          <span style="color: hsl(218, 81%, 75%)">for your business</span>
+          
+        </h1>
+        <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
+          
+        </p>
+      </div>
+
+      <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+        <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+        <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+
+        
+        <!--for jquery use-->
+        
+          <div class="card bg-glass">
+          <div class="card-body px-4 py-4 px-md-5">
+           
+            
+            <h2 class="fw-bold mb-5"  style="text-align:center;" id="a_title">  Login As </h2>
+            <button  (click)="adminview()"  style="border-radius: 15% ;">Admin</button> 
+            <button  (click)="distributorview()" style="margin-left: 50px; margin-bottom: 20px; border-radius: 15%;">Distributor</button>
+
+            <div *ngIf="buttonview">
+
+            <form [formGroup]="addForm">
+
+
+
+              <!-- 2 column grid layout with text inputs for the first and last names -->
+              
+           
+
+              <!-- Phone --> 
+              <div class="form-outline mb-4">
+                <input type="text" id="form3Example3" class="form-control"  formControlName="name" />
+                <label class="form-label" for="form3Example3">Email or Phone Number</label>
+              </div>
+
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <input type="password" id="form3Example4" class="form-control"  formControlName="password2"/>
+                <label class="form-label" for="form3Example4">Password</label>
+              </div>
+
+             
+
+              <!-- Submit button -->
+            <button  class="btn btn-primary btn-block mb-4" (click)="login()"  *ngIf="buttonview" >Admin Log in</button> 
+
+          
+           <!-- <button  class="btn btn-primary btn-block mb-4" routerLink="../home">Log in</button>
+           <button  class="btn btn-primary btn-block mb-4" routerLink="../home">Log in</button> -->
+              
+            </form>
+          </div>
+
+
+<!--Distributor login-->
+
+          <div *ngIf="!buttonview">
+
+            <form [formGroup]="addForm">
+
+
+
+              <!-- 2 column grid layout with text inputs for the first and last names -->
+              
+           
+
+              <!-- Phone --> 
+              <div class="form-outline mb-4">
+                <input type="text" id="form3Example3" class="form-control"  formControlName="name" />
+                <label class="form-label" for="form3Example3">User Name</label>
+              </div>
+
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <input type="password" id="form3Example4" class="form-control"  formControlName="password2"/>
+                <label class="form-label" for="form3Example4">Password</label>
+              </div>
+
+             
+
+              <!-- Submit button -->
+              <button  class="btn btn-primary btn-block mb-4" (click)="login2()" *ngIf="!buttonview" >Distributor  Log in</button> 
+<!-- 
+            <button  class="btn btn-primary btn-block mb-4"  *ngIf="!buttonview" (click)="default()"  style="margin-left: 10px;">Defaulat</button>  -->
+          
+           <!-- <button  class="btn btn-primary btn-block mb-4" routerLink="../home">Log in</button>
+           <button  class="btn btn-primary btn-block mb-4" routerLink="../home">Log in</button> -->
+              
+            </form>
+          </div>
+
+
+            <!-- <button  class="btn btn-primary btn-block mb-4" (click)="admin()" >Log in</button> -->
+            
+             <!-- for temporary log in form end -->
+             
+             <!-- Register buttons -->
+              <div class="text-center">
+                <p>Or dont have account : <a routerLink="/register" > Register</a>  </p>
+               
+              </div>
+            </div>
+   
+          </div>
+          <br>
+         
+          <br>
+        </div>
+       
+      </div>
+    </div>
+  
+</section>
+
+
+

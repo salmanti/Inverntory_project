@@ -1,0 +1,197 @@
+
+
+        <div style="background-color: white;">
+          <h1 style="text-align:center ;background-color:rgba(30, 143, 255, 0.653); padding:2px; color:black">Main Stock</h1><br>
+             <div   style="margin-left: 15px; margin-right: 15px; padding-top: 20px;" >       <!-- insted of container  main container-->
+            
+              
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              
+              <button class="btn btn-primary" type="button" (click)="allproducts ()" >  <i class="fa-solid fa-list me-2"></i> All Stocks</button>
+            </div> 
+            
+
+            
+            <div style="padding: 10px;" >     <!-- insted of container  1st grid-->
+            
+<!--brand list   -->
+<div class="row">
+  <div class="col-md-2">
+    <h3 style=" text-align:center; text-align: center;">Brand Wise</h3>
+  </div>
+  <div class="col-md-10">
+    <ul  class="list-group " *ngFor="let p of brnads"   style="display: inline-block;" >
+            
+      <li   class="list-group"  ><button class="btn btn-outline-primary btn-sm" (click)="viewproducts(p)"  style="margin-left: 35px;"><i class="fa-solid fa-list me-2"></i>{{p.name}}  </button>   </li>
+     </ul>
+
+
+  </div>
+</div>
+
+          
+
+
+            
+              <div class="row">
+              
+                <!-- First Grid start --> 
+                
+                <!-- First Grid end -->  
+                
+                <!-- 2 nd grid start -->
+                <div class="col-md-12">
+
+
+                <!-- <h4 style="text-align:center;">Product List</h4> -->
+
+                <!-- 2 nd Content start -->
+                <br>
+
+  <div *ngIf="tableshow">
+    <h2 style="text-align:center; background-color: rgba(108, 108, 167, 0.301); color: black;"><strong>{{brname}}</strong> Products Stocks</h2><br>
+                <table class="table table-striped table-bordered border-info">
+                    <thead>
+                          <tr>
+                            <th>Serial</th>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Unit</th>
+                            <th>Brand</th>
+                            <th>Total Purchase</th>
+                            <th>Availabe Stock</th>
+                            <!-- <th>Distributor Rate</th>
+                            <th>retailer Rate</th>
+                            <th>Mrp Rate</th> -->
+                            <th width="50px">Action</th>   <!--250px silo-->
+                          </tr>
+                    </thead>
+                    <tbody>
+                          <tr *ngFor="let post of products2; let i = index"  >
+                            <td> {{[i+1]}} </td>
+                            <td>{{ post.product_id }}</td>
+                            <td>{{ post.product_name }}</td>
+                            <td>{{ post.product_unit}}</td>
+                            <td>{{ post.product_brand }}</td>
+                            <td>{{ post.total_quantity }}</td>
+                            <td>{{ post.product_quantity }}</td>
+                            <!-- <td>{{ post.distributor_rate }}</td>
+                            <td>{{ post.retail_rate }}</td>
+                            <td>{{ post.mrp }}</td> -->
+                            <td > <button [routerLink]="['/ad-home/', post.product_id, 'view']"  class="btn  btn-sm btn-primary">View</button></td> 
+                         
+                           <!-- <td>
+                               <a href="#" [routerLink]="['/post/', post.product_id, 'view']" class="btn btn-info">View</a>
+                              <a href="#" [routerLink]="['/post/', post.product_id, 'edit']" class="btn btn-primary">Edit</a>
+                              <button type="button" (click)="deletePost(post.product_id)" class="btn btn-danger">Delete</button> 
+                            </td>-->
+                          </tr>
+                    </tbody>
+                </table>
+  </div>
+
+
+  <!-- all products show starts-->
+
+
+  <div *ngIf="!tableshow">
+    <h2 style="text-align:center; background-color: rgba(108, 108, 167, 0.301); color: black;"> All Product Stocks</h2> <br>
+                <table class="table table-striped table-bordered border-info">
+                    <thead>
+                          <tr>
+                            <th>Serial</th>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Unit</th>
+                            <th>Brand</th>
+                            <th>Total Purchase</th>
+                            <th>Availabe Stock</th>
+                            <!-- <th>Distributor Rate</th>
+                            <th>retailer Rate</th>
+                            <th>Mrp Rate</th> -->
+                            <th width="50px">Action</th>   <!--250px silo-->
+                          </tr>
+                    </thead>
+                    <tbody>
+                          <tr *ngFor="let post of products ; let i = index">
+                            <td>{{[i+1]}} </td>
+                            <td>{{ post.product_id }}</td>
+                            <td>{{ post.product_name }}</td>
+                            <td>{{ post.product_unit}}</td>
+                            <td>{{ post.product_brand }}</td>
+                            <td>{{ post.total_quantity }}</td>
+                            <td><strong> {{ post.product_quantity }} </strong></td>
+                            <!-- <td>{{ post.distributor_rate }}</td>
+                            <td>{{ post.retail_rate }}</td>
+                            <td>{{ post.mrp }}</td> -->
+                            <td > <button   [routerLink]="['/ad-home/', post.product_id, 'view']" class="btn  btn-sm btn-primary">View</button></td> 
+                         
+                           <!-- <td>
+                               <a href="#" [routerLink]="['/post/', post.product_id, 'view']" class="btn btn-info">View</a>
+                              <a href="#" [routerLink]="['/post/', post.product_id, 'edit']" class="btn btn-primary">Edit</a>
+                              <button type="button" (click)="deletePost(post.product_id)" class="btn btn-danger">Delete</button> 
+                            </td>-->
+                          </tr>
+                    </tbody>
+                </table>
+  </div>
+
+  <!--all products show end-->
+              <!-- 2 nd Content end -->
+
+
+           <br>
+            
+          <br>
+            
+                      
+              </div>
+            </div>
+            
+            
+            
+            </div>
+            </div>
+
+
+            <!-- list start-->
+<!-- 
+            <div Class="container">
+
+              <div class="col-md-12">  
+                <h2> Product Table</h2>  
+                <div class="table-responsive">  
+                  <table class="table">  
+                    <thead>  
+                      <tr>  
+                        <th>Id</th>  
+                        <th>Product Code</th>  
+                        <th>Name</th>  
+                        <th>Quantity</th>  
+                        <th>Price</th>  
+                        <th>Action</th>  
+                        <th>Action</th>  
+                      </tr>  
+                    </thead>  
+                    <tbody> 
+                     <tr *ngFor="let p of products" >
+                      <td>{{p.id}}</td>
+                      <td>{{p.product_code}}</td>
+                      <td>{{p.product_name}}</td>
+                      <td>{{p.product_quantity}}</td>
+                      <td>{{p.product_price}}</td>
+                      <td> <button class="btn btn-info" (click)="editEmp(p)">Edit</button></td>
+                      <td> <button class="btn btn-danger" (click)="delProduct(p)">Delete</button></td>
+              
+                     </tr>
+                    </tbody>  
+                  </table>  
+                </div>  
+              </div>  
+              </div> -->
+            <!--List end-->
+            
+            </div>
+            
+
+

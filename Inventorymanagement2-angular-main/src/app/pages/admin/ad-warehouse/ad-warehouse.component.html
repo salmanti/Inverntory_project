@@ -1,0 +1,129 @@
+<div  class='dashboard-content'>
+    
+    <div  class='container'>
+    
+
+      <div *ngIf="createform">
+
+        <h2 style="text-align:center ;background-color:rgba(30, 143, 255, 0.537); padding:2px; color: black;"> Add Warehouse </h2><br>
+      <form [formGroup]="addForm"   (ngSubmit)="addWarehouse()">
+      
+      <div class="row g-3">
+      <div class="col">
+      
+      <div class="mb-3 row">
+        <label for="inputPassword" class="col-sm-3 col-form-label"  > Name</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control form-control-sm" formControlName="name">
+        </div>
+      </div>
+    
+      </div>
+       <div class="col">
+         <div class="mb-3 row">
+          <label for="inputPassword" class="col-sm-3 col-form-label"  >Warehouse Code</label>
+           <div class="col-sm-9">
+          <input type="text" class="form-control form-control-sm" formControlName="code">
+        </div>
+      </div>
+      </div>
+    </div>
+    
+     
+    
+    <div class="row g-3">
+      <div class="col">
+      
+      <div class="mb-3 row">
+        <label for="inputPassword" class="col-sm-3 col-form-label"  >Phone</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control form-control-sm" formControlName="mobile">
+        </div>
+      </div>  
+      </div>
+      <div class="col">
+      
+        <div class="mb-3 row">
+          <label for="inputPassword" class="col-sm-3 col-form-label"  >Address</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control form-control-sm" formControlName="address">
+          </div>
+        </div>
+      
+        </div>
+    </div>
+
+    <div class="row g-3">
+      <div class="col">
+
+      </div>
+      
+       <div class="col">
+         <div class="mb-3 row">
+          <label for="inputPassword" class="col-sm-3 col-form-label"  ></label>
+           <div class="col-sm-9">
+           <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <!-- <a href="/admin/supplier/create/"> <button class="btn btn-primary me-md-2" type="button">Refress</button></a> -->
+      <button  type="submit"  class="btn btn-success"   *ngIf="btnvisibility"   >Save</button>  
+    <button class="btn btn-primary"  (click)="updateWarehouse()" *ngIf="!btnvisibility"  >Update</button>  
+    </div>
+    
+        </div>
+      </div>
+      </div>
+    </div>
+    
+    
+    </form>
+</div>
+    
+    </div>
+
+<br>
+
+     <div Class="container">
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button class="btn btn-primary " (click)="show()"><i class="fa-solid fa-user-plus " ></i> Add</button>
+
+      </div><br>
+      <div class="col-md-12">  
+        <h3 style="text-align:center ;background-color:rgb(100, 160, 220); padding:2px;">Wirehouse List</h3><br> 
+        <div class="table-responsive ">  
+          <table class="table table-sm">  
+            <thead>  
+              <tr>  
+                <th>Id</th>  
+                <th> Name</th>  
+                <th>Wirehouse code</th>  
+                <th>Phone</th>    
+                <th>Address</th>      
+                <th>Action</th>  
+                <th>Action</th>  
+              </tr>  
+            </thead>  
+            <tbody> 
+              <tr *ngFor="let p of products" >
+              <td>{{p.id}}</td>
+              <td>{{p.name}}</td>
+              <td>{{p.code}}</td>
+              <td>{{p.mobile}}</td>
+              <td>{{p.address}}</td>
+              
+             <td> <button class="btn btn-info" (click)="editEmp(p)"  (click)="show()" >Edit</button></td> 
+              <td> <button class="btn btn-danger" (click)="delProduct(p)">Delete</button></td> 
+      
+             </tr>
+            </tbody>  
+          </table>  
+        </div>  
+      </div>  
+      </div> 
+
+
+
+
+
+
+
+
+</div>

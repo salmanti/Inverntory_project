@@ -1,0 +1,36 @@
+<div class="container">
+    <h2>User Registration List</h2>
+    
+   
+      
+    <table class="table table-striped">
+        <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Emaili</th>
+                <th>Password</th>
+             
+                <th width="250px">Action</th>
+              </tr>
+        </thead>
+        <tbody>
+              <tr *ngFor="let p of posts">
+                <td>{{ p.id }}</td>
+                <td>{{ p.name }}</td>
+                <td>{{ p.phone}}</td>
+                <td>{{ p.email }}</td>
+                <td>{{ p.password2 }}</td>
+                
+             
+                <td>
+                  <!-- <a  [routerLink]="['/post/', p.id, 'view']" class="btn btn-info">View</a>
+                  <a  [routerLink]="['/post/', p.id, 'edit']" class="btn btn-primary">Edit</a> -->
+                  <button type="button" (click)="deletePost(p.id)" class="btn btn-danger" >Delete</button>
+                </td>
+              </tr>
+        </tbody>
+    </table>
+ </div>
+

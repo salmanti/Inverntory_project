@@ -1,0 +1,101 @@
+
+<div class='dashboard'>
+    <div class="dashboard-nav">
+      <header><a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a>
+              <a href="#" class="brand-logo"> <span>Distributor</span></a>
+              
+      </header>
+      <nav class="dashboard-nav-list">
+      <a  routerLink="dis-dashboard" class="dashboard-nav-item active"><i class="fas fa-home"></i>Dashboard </a>
+      
+        
+         
+      
+        <div class='dashboard-nav-dropdown'><a  class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fa-solid fa-notes-medical"></i>Transection </a>
+          <div class='dashboard-nav-dropdown-menu'>
+          <a routerLink="dis-productstock" class="dashboard-nav-dropdown-item"><i class="fa-solid fa-circle-plus me-2"></i>Stock Report </a>
+          <a  class="dashboard-nav-dropdown-item"><i class="fa-solid fa-circle-plus me-2"></i>Stock Report 2 </a>
+
+        
+            <a routerLink="dis-sale"  class="dashboard-nav-dropdown-item"> <i class="fa-solid fa-circle-plus me-2"></i>Sales</a>
+            <a routerLink="dis-returnstock" class="dashboard-nav-dropdown-item"> <i class="fa-solid fa-circle-plus me-2"></i>Return Entry</a>
+
+           <a routerLink="dis-salelist" class="dashboard-nav-dropdown-item"><i class="fa-solid fa-list me-2"></i>Sales List </a>
+           <a routerLink="dis-received-stock" class="dashboard-nav-dropdown-item"><i class="fa-solid fa-list me-2"></i>Stock In List </a>
+           <a routerLink="dis-productreceiving" class="dashboard-nav-dropdown-item"><i class="fa-solid fa-list me-2"></i>Stock In Pending</a>
+
+      
+          
+          </div>
+        </div>
+         <div class='dashboard-nav-dropdown'><a  class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-photo-video"></i> Products List </a>
+          <div class='dashboard-nav-dropdown-menu'>
+          <a routerLink="dis-productstock" class="dashboard-nav-dropdown-item"> <i class="fa-solid fa-list me-2"></i>Product List</a>
+          <a  class="dashboard-nav-dropdown-item"> <i class="fa-solid fa-list me-2"></i>Category List</a>
+          
+          <a  class="dashboard-nav-dropdown-item"> <i class="fa-solid fa-list me-2"></i>Brand List</a>
+          </div>
+        </div>
+        
+        
+        
+         <div class='dashboard-nav-dropdown'><a  class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-users"></i> Sales Report </a>
+          <div class='dashboard-nav-dropdown-menu'>
+          <a  class="dashboard-nav-dropdown-item">Daily Sales</a>
+          <a  class="dashboard-nav-dropdown-item">Clint Wise</a>
+          <a  class="dashboard-nav-dropdown-item">Product Wise</a>
+          </div>
+        </div>
+        
+      
+          <a  class="dashboard-nav-item "><i class="fas fa-tachometer-alt"></i> Due Report</a>
+       
+       
+      
+        
+          <div class='dashboard-nav-dropdown'><a  class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-user"></i>CRM </a>
+          <div class='dashboard-nav-dropdown-menu'>
+       <!-- <a routerLink="/ad-home/./ad-customer" class="dashboard-nav-dropdown-item"> <i class="fa-solid fa-user-plus"></i> Add Customer</a> -->
+     
+       <a routerLink="dis-customer" class="dashboard-nav-dropdown-item"> <i class="fa-solid fa-user-plus"></i> Add Customer</a>
+          
+          <a   class="dashboard-nav-dropdown-item"> <i class="fa-solid fa-user-plus"></i> Add Stuff</a>
+            
+     
+         
+       
+      
+          
+          </div>
+        </div>
+        
+        <a  class="dashboard-nav-item"><i class="fas fa-cogs"></i> Settings </a>
+  
+        <div class="nav-item-divider"></div>
+        <a href="/" (click)="logout()" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i> Logout </a>   <!--href="/"-->
+      </nav>
+    </div>
+    <div class='dashboard-app'>
+      <header class='dashboard-toolbar'><a   class="menu-toggle"><i class="fas fa-bars"></i> </a>  
+        
+        <div class="d-flex"  style="position: fixed; right: 40px; top: 20px;">
+  
+          <h6 class="nav-link  ">{{fullname}}</h6>
+          <img src="assets/disone.png" alt="Avatar" style="width:40px">
+          
+          
+        </div>
+
+      </header>
+  
+  
+  
+      <router-outlet></router-outlet> 
+  
+  
+  
+    </div>
+</div>
+
+
+
